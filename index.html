@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body style="border:1px solid black;Padding:8px">
+    <h1>HTML DOM Events</h1>
+    <h2>The currentTarget Property</h2>
+
+    <p>Click on any elements in this document to find out which element triggered the onclick event.</p>
+
+    <button>This is a button</button>
+
+    <p>The target property does not return the element that was clicked on, but the element which triggered the event.
+    </p>
+
+    <p id="demo">list view</p>
+
+    <ul role="menu" tabindex="0" class="cAqHo_eAjd" aria-labelledby="u3YVnbGggCpp">
+        <li role="none">
+            <span class="eoNrR_bGBk" role="presentation">
+                <span id="uGCkgbHLOYxf">
+                    <span class="eoNrR_blJt">Dashboard View</span>
+                </span>
+                <ul role="menu" class="eoNrR_JelF" aria-labelledby="uGCkgbHLOYxf">
+                    <li role="none"> <span tabindex="-1" role="menuitemradio" aria-labelledby="uzkD6aU2CZnL"
+                            aria-checked="true" class="sJGfW_bGBk">
+                            <span>
+                                <span class="sJGfW_dnnz">
+                                    <svg name="IconCheck" viewBox="0 0 1920 1920" rotate="0" width="1em" height="1em"
+                                        aria-hidden="true" role="presentation" focusable="false"
+                                        class="dUOHu_bGBk dUOHu_drOs dUOHu_eXrk cGqzL_bGBk"
+                                        style="width: 1em; height: 1em;">
+                                        <g role="presentation">
+                                            <path
+                                                d="M1743.8579 267.012456L710.746654 1300.1237 176.005086 765.382131 0 941.387217 710.746654 1652.25843 1919.98754 443.142104z"
+                                                fill-rule="evenodd" stroke="none" stroke-width="1">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="sJGfW_blJt" id="uzkD6aU2CZnL">Card View</span>
+                            </span>
+                        </span> </li>
+                    <li role="none"> <span tabindex="-1" role="menuitemradio" aria-labelledby="uGLbnTgVYDfj"
+                            aria-checked="false" class="sJGfW_bGBk">
+                            <span>
+                                <span class="sJGfW_dnnz">
+                                </span>
+                                <span class="sJGfW_blJt" id="uGLbnTgVYDfj">List View</span>
+                            </span>
+                        </span> </li>
+                    <li role="none"> <span tabindex="-1" role="menuitemradio" aria-labelledby="uGakkObTyOKg"
+                            aria-checked="false" class="sJGfW_bGBk">
+                            <span>
+                                <span class="sJGfW_dnnz">
+                                </span>
+                                <span class="sJGfW_blJt" id="uGakkObTyOKg">Recent Activity</span>
+                            </span>
+                        </span> </li>
+                </ul>
+            </span>
+        </li>
+        <li role="none">
+            <div role="presentation" class="dpuxe_bGBk">
+            </div>
+        </li>
+        <li role="none">
+            <span class="eoNrR_bGBk" role="presentation">
+                <span id="u2uLZgPjaHyC">
+                    <span class="ergWt_bGBk">Toggle course card color overlays</span>
+                </span>
+                <ul role="menu" class="eoNrR_JelF" aria-labelledby="u2uLZgPjaHyC">
+                    <li role="none"> <span tabindex="-1" role="menuitemradio" aria-labelledby="u3kOfkVHzDHZ"
+                            aria-checked="true" class="sJGfW_bGBk">
+                            <span>
+                                <span class="sJGfW_dnnz">
+                                    <svg name="IconCheck" viewBox="0 0 1920 1920" rotate="0" width="1em" height="1em"
+                                        aria-hidden="true" role="presentation" focusable="false"
+                                        class="dUOHu_bGBk dUOHu_drOs dUOHu_eXrk cGqzL_bGBk"
+                                        style="width: 1em; height: 1em;">
+                                        <g role="presentation">
+                                            <path
+                                                d="M1743.8579 267.012456L710.746654 1300.1237 176.005086 765.382131 0 941.387217 710.746654 1652.25843 1919.98754 443.142104z"
+                                                fill-rule="evenodd" stroke="none" stroke-width="1">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="sJGfW_blJt" id="u3kOfkVHzDHZ">Color Overlay</span>
+                            </span>
+                        </span> </li>
+                </ul>
+            </span>
+        </li>
+    </ul>
+
+    <script>
+        const container = document.querySelector("body");
+        container.addEventListener("click", function (q) {
+            if (q.target.tagName == "P") {
+                console.log(q.target.tagName);
+            }
+        }
+        );
+        changeItems = document.querySelectorAll('ul');
+
+        var cardBox = changeItems[0].children[0].children[0].children[1].children[0]
+        function clickHandler(event, area) {
+            console.log('Button Clicked', area);
+        }
+        cardBox.addEventListener('click', clickHandler);
+
+    </script>
+
+</body>
+
+</html>
